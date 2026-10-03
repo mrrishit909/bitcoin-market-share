@@ -1,0 +1,8 @@
+{
+  "pulled": "2026-10-03",
+  "source": "https://community-api.coinmetrics.io/v4/timeseries/asset-metrics (CapMrktCurUSD, 1d, all assets)",
+  "dates": 160,
+  "rows": 10885,
+  "bytes": 519972,
+  "sha256": "05c8ee8fa1bffa7d35a7c3c9ed00014df797e38f5b7c9b6cf20882f00f62d0cc"
+}
