@@ -1,0 +1,9 @@
+check,value
+rows,10885
+dates,160
+assets,135
+duplicate date-asset rows,0
+rows with a market cap of zero (dropped),35
+assets whose id has an underscore,40
+first date,20130131
+last date,20260430

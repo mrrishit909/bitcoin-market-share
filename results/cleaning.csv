@@ -1,0 +1,50 @@
+asset,what_happens,dates_affected,first_date,last_date
+ae_eth,"kept as ae (no whole-asset row), copies summed",104,2017-09-30,2026-04-30
+aion_eth,"kept as aion (no whole-asset row), copies summed",63,2017-12-31,2023-02-28
+avaxc,summed into avax,68,2020-09-30,2026-04-30
+avaxp,summed into avax,68,2020-09-30,2026-04-30
+avaxx,summed into avax,37,2023-04-30,2026-04-30
+bnb_eth,"dropped: chain-specific copy of bnb, which is reported as a whole",21,2017-07-31,2019-03-31
+btm_eth,"kept as btm (no whole-asset row), copies summed",92,2017-10-31,2025-05-31
+buidl_eth,"kept as buidl (no whole-asset row), copies summed",6,2025-11-30,2026-04-30
+crvusd_eth,"kept as crvusd (no whole-asset row), copies summed",23,2024-06-30,2026-04-30
+eos_eth,"kept as eos (no whole-asset row), copies summed",12,2017-06-30,2018-05-31
+eurc_eth,"kept as eurc (no whole-asset row), copies summed",46,2022-07-31,2026-04-30
+fdusd_eth,"kept as fdusd (no whole-asset row), copies summed",34,2023-07-31,2026-04-30
+flow_native,"dropped: chain-specific copy of flow, which is reported as a whole",22,2024-06-30,2026-04-30
+frax_eth,"kept as frax (no whole-asset row), copies summed",65,2020-12-31,2026-04-30
+hbtc,"dropped: wrapped, migrated or staked claim on another tracked asset",75,2020-02-29,2026-04-30
+icx_eth,"kept as icx (no whole-asset row), copies summed",104,2017-09-30,2026-04-30
+lend,"dropped: wrapped, migrated or staked claim on another tracked asset",101,2017-12-31,2026-04-30
+leo_eos,"kept as leo (no whole-asset row), copies summed",84,2019-05-31,2026-04-30
+leo_eth,"kept as leo (no whole-asset row), copies summed",84,2019-05-31,2026-04-30
+lrc_eth,"kept as lrc (no whole-asset row), copies summed",104,2017-09-30,2026-04-30
+lusd_eth,"kept as lusd (no whole-asset row), copies summed",61,2021-04-30,2026-04-30
+matic_eth,"kept as matic (no whole-asset row), copies summed",78,2019-04-30,2025-09-30
+nas_eth,"kept as nas (no whole-asset row), copies summed",84,2017-12-31,2024-11-30
+pol_eth,"kept as pol (no whole-asset row), copies summed",31,2023-10-31,2026-04-30
+pyusd_eth,"kept as pyusd (no whole-asset row), copies summed",33,2023-08-31,2026-04-30
+qtum_eth,"kept as qtum (no whole-asset row), copies summed",106,2017-07-31,2026-04-30
+renbtc,"dropped: wrapped, migrated or staked claim on another tracked asset",72,2020-05-31,2026-04-30
+rev_eth,"kept as rev (no whole-asset row), copies summed",48,2020-03-31,2024-02-29
+sdai_eth,"dropped: wrapped, migrated or staked claim on another tracked asset",21,2024-08-31,2026-04-30
+shib_eth,"kept as shib (no whole-asset row), copies summed",60,2021-05-31,2026-04-30
+susde_eth,"dropped: wrapped, migrated or staked claim on another tracked asset",23,2024-06-30,2026-04-30
+trx_eth,"kept as trx (no whole-asset row), copies summed",8,2017-10-31,2018-05-31
+tusd_eth,"dropped: chain-specific copy of tusd, which is reported as a whole",94,2018-07-31,2026-04-30
+tusd_trx,"dropped: chain-specific copy of tusd, which is reported as a whole",62,2021-03-31,2026-04-30
+usdc_avaxc,"dropped: chain-specific copy of usdc, which is reported as a whole",53,2021-12-31,2026-04-30
+usdc_eth,"dropped: chain-specific copy of usdc, which is reported as a whole",92,2018-09-30,2026-04-30
+usdc_trx,"dropped: chain-specific copy of usdc, which is reported as a whole",59,2021-06-30,2026-04-30
+usdd_eth,"kept as usdd (no whole-asset row), copies summed",47,2022-06-30,2026-04-30
+usde_eth,"kept as usde (no whole-asset row), copies summed",23,2024-06-30,2026-04-30
+usdm_eth,"kept as usdm (no whole-asset row), copies summed",14,2024-06-30,2025-07-31
+usdt_avaxc,"dropped: chain-specific copy of usdt, which is reported as a whole",55,2021-10-31,2026-04-30
+usdt_eth,"dropped: chain-specific copy of usdt, which is reported as a whole",102,2017-11-30,2026-04-30
+usdt_omni,"dropped: chain-specific copy of usdt, which is reported as a whole",139,2014-10-31,2026-04-30
+usdt_trx,"dropped: chain-specific copy of usdt, which is reported as a whole",85,2019-04-30,2026-04-30
+vet_eth,"kept as vet (no whole-asset row), copies summed",94,2018-07-31,2026-04-30
+wbtc,"dropped: wrapped, migrated or staked claim on another tracked asset",90,2018-11-30,2026-04-30
+weth,"dropped: wrapped, migrated or staked claim on another tracked asset",101,2017-12-31,2026-04-30
+wnxm,"dropped: wrapped, migrated or staked claim on another tracked asset",69,2020-08-31,2026-04-30
+zil_eth,"kept as zil (no whole-asset row), copies summed",100,2018-01-31,2026-04-30

@@ -1,0 +1,14 @@
+key,value
+btc_share_2013_12_31,0.9386634270081002
+btc_share_2017_12_31,0.33022716440713407
+btc_share_2021_12_31,0.4329841055279662
+btc_share_latest,0.64973035423967
+eth_share_latest,0.11675801110390746
+stablecoin_share_latest,0.11961518317073111
+top5_share_latest,0.938086718615305
+top10_share_latest,0.9640617573502184
+effective_assets_latest,2.2366525810771467
+assets_latest,86.0
+total_cap_latest_usd,2351338284920.5015
+months_with_btc_below_50pct,45.0
+months_with_at_least_10_assets,135.0
