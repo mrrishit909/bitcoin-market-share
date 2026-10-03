@@ -57,7 +57,7 @@ def main():
             logs.setdefault((a, msg), []).append(dt)
         st = sum(v for k, v in s.items() if k in STABLE); gd = sum(v for k, v in s.items() if k in GOLD); hhi = sum((v / t) ** 2 for v in s.values())
         rows.append({"date": dt.strftime("%Y-%m-%d"), "assets": len(s), "total_cap_usd": t, "btc_share": s.get("btc", 0.0) / t, "eth_share": s.get("eth", 0.0) / t, "stablecoin_share": st / t, "gold_share": gd / t,
-                     "other_share": 1 - (s.get("btc", 0.0) + s.get("eth", 0.0) + st + gd) / t, "top5_share": sum(v for _, v in srt[:5]) / t, "top10_share": sum(v for _, v in srt[:10]) / t, "effective_assets": 1 / hhi})
+                     "other_share": 1 - (s.get("btc", 0.0) + s.get("eth", 0.0) + st + gd) / t, "uncleaned_total_cap_usd": g["cap"].sum(), "uncleaned_btc_share": g.loc[g["asset"] == "btc", "cap"].sum() / g["cap"].sum(), "top5_share": sum(v for _, v in srt[:5]) / t, "top10_share": sum(v for _, v in srt[:10]) / t, "effective_assets": 1 / hhi})
         if dt.strftime("%Y-%m-%d") in SNAPSHOTS:
             tops += [{"date": dt.strftime("%Y-%m-%d"), "rank": i + 1, "asset": a, "cap_usd": v, "share": v / t} for i, (a, v) in enumerate(srt[:10])]
     m = pd.DataFrame(rows); m.to_csv(R / "monthly.csv", index=False); pd.DataFrame(tops).to_csv(R / "tops.csv", index=False)
@@ -77,7 +77,7 @@ def main():
     last = m.iloc[-1]; share_at = lambda day: float(m.loc[m["date"] == day, "btc_share"].iloc[0])
     summ = {"btc_share_2013_12_31": share_at("2013-12-31"), "btc_share_2017_12_31": share_at("2017-12-31"), "btc_share_2021_12_31": share_at("2021-12-31"), "btc_share_latest": last["btc_share"], "eth_share_latest": last["eth_share"], "stablecoin_share_latest": last["stablecoin_share"],
             "top5_share_latest": last["top5_share"], "top10_share_latest": last["top10_share"], "effective_assets_latest": last["effective_assets"], "assets_latest": last["assets"], "total_cap_latest_usd": last["total_cap_usd"],
-            "months_with_btc_below_50pct": int((big["btc_share"] < 0.5).sum()), "months_with_at_least_10_assets": len(big)}
+            "months_with_btc_below_50pct": int((big["btc_share"] < 0.5).sum()), "months_with_at_least_10_assets": len(big), "btc_share_latest_uncleaned": last["uncleaned_btc_share"], "total_cap_latest_uncleaned_usd": last["uncleaned_total_cap_usd"]}
     pd.DataFrame(list(summ.items()), columns=["key", "value"]).to_csv(R / "summary.csv", index=False)
     for f in ("audit", "cleaning", "extremes", "summary", "movers", "tops"):
         print("==", f); print(pd.read_csv(R / f"{f}.csv").round(4).to_string(index=False))

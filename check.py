@@ -84,7 +84,7 @@ def main():
     monthly = table("monthly"); eq("monthly dates", [r["date"] for r in monthly], dates); calc = {}
     for r in monthly:
         d = r["date"]; s = fam[d]; t = sum(s.values()); srt = sorted(s.items(), key=lambda kv: (-kv[1], kv[0])); st = sum(v for k, v in s.items() if k in STABLE); gd = sum(v for k, v in s.items() if k in GOLD)
-        o = {"assets": len(s), "total_cap_usd": t, "btc_share": s.get("btc", 0.0) / t, "eth_share": s.get("eth", 0.0) / t, "stablecoin_share": st / t, "gold_share": gd / t, "other_share": 1 - (s.get("btc", 0.0) + s.get("eth", 0.0) + st + gd) / t,
+        o = {"assets": len(s), "total_cap_usd": t, "btc_share": s.get("btc", 0.0) / t, "eth_share": s.get("eth", 0.0) / t, "stablecoin_share": st / t, "gold_share": gd / t, "other_share": 1 - (s.get("btc", 0.0) + s.get("eth", 0.0) + st + gd) / t, "uncleaned_total_cap_usd": sum(c for _, c in by_date[d]), "uncleaned_btc_share": sum(c for x, c in by_date[d] if x == "btc") / sum(c for _, c in by_date[d]),
              "top5_share": sum(v for _, v in srt[:5]) / t, "top10_share": sum(v for _, v in srt[:10]) / t, "effective_assets": 1 / sum((v / t) ** 2 for v in s.values())}
         calc[d] = o
         for k, v in o.items():
@@ -105,7 +105,7 @@ def main():
     L = calc[dates[-1]]; sm = {r["key"]: float(r["value"]) for r in table("summary")}
     exp = {"btc_share_2013_12_31": calc["2013-12-31"]["btc_share"], "btc_share_2017_12_31": calc["2017-12-31"]["btc_share"], "btc_share_2021_12_31": calc["2021-12-31"]["btc_share"], "btc_share_latest": L["btc_share"], "eth_share_latest": L["eth_share"],
            "stablecoin_share_latest": L["stablecoin_share"], "top5_share_latest": L["top5_share"], "top10_share_latest": L["top10_share"], "effective_assets_latest": L["effective_assets"], "assets_latest": L["assets"], "total_cap_latest_usd": L["total_cap_usd"],
-           "months_with_btc_below_50pct": sum(calc[d]["btc_share"] < 0.5 for d in big), "months_with_at_least_10_assets": len(big)}
+           "months_with_btc_below_50pct": sum(calc[d]["btc_share"] < 0.5 for d in big), "months_with_at_least_10_assets": len(big), "btc_share_latest_uncleaned": L["uncleaned_btc_share"], "total_cap_latest_uncleaned_usd": L["uncleaned_total_cap_usd"]}
     eq("summary keys", sorted(sm), sorted(exp))
     for k, v in exp.items():
         same(f"summary {k}", v, sm[k], 1e-8)
